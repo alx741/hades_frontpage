@@ -1,4 +1,27 @@
-<!DOCTYPE html>
+<?php
+
+$pass = $_POST['password'];
+$pass = trim($pass);
+$pass = strtolower($pass);
+$pass_md5 = md5($pass);
+
+$pass_file = "./pass";
+$md5_file = fopen($pass_file, "r") or die("Unable to read password file");
+$read_md5 = trim(fread($md5_file, filesize($pass_file)));
+
+$password_check = false;
+
+if ($pass_md5 == $read_md5)
+{
+    session_start();
+    $password_check = true;
+}
+else
+{
+    $password_check = false;
+}
+
+?>
 
 <html lang="en">
     <head>
@@ -16,9 +39,17 @@
         <script src='http://127.0.0.1:9001/js/socket.js'></script>
     </head>
 
-    <body>
+    <?php if ($pass == "")
+    {
+        print '<body>';
+    }
+    else if ($password_check == false)
+    {
+        print '<body style="background-color: #ff9191">';
+    }
+    ?>
         <div id='password_form'>
-            <form action="./php/login.php" method="post">
+            <form action="" method="post">
                 <input type="password" name="password" id="password_input"
                     autocomplete="off" autofocus>
                 <input type="submit" style="position: absolute; left: -9999px;
