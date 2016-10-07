@@ -14,7 +14,9 @@ $password_check = false;
 if ($pass_md5 == $read_md5)
 {
     session_start();
+    $_SESSION['timestamp'] = time();
     $password_check = true;
+    header("Location: ./php/main.php");
 }
 else
 {
