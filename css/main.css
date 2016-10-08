@@ -21,6 +21,34 @@ body
     width: 100%;
 }
 
+#banner
+{
+    height: 100%;
+}
+
+#main
+{
+    margin-top: 10px;
+}
+
+#main #task,#cam
+{
+    display: block;
+    width: 100%;
+}
+
+#main #chronos
+{
+    max-width: 400px;
+}
+
+#main #athena
+{
+    display: block;
+    margin-left: auto;
+    max-width: 300px;
+}
+
 #password_form
 {
     bottom: 1.5%;

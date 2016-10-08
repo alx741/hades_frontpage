@@ -22,5 +22,18 @@ if (! isset($_SESSION['timestamp']))
     </head>
 
     <body>
+        <div id='banner'></div>
+
+        <div id='main'>
+
+            <div id='taskw'>
+                <img id='chronos' src='../img/chronos.png'>
+            </div>
+
+            <div id='cam'>
+                <img id='athena' src='../img/athena.png'>
+            </div>
+
+        </div>
     </body>
 </html>
